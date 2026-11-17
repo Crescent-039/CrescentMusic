@@ -23,7 +23,7 @@ jobs:
       - run: npm run dist:clean
       - run: npm run test:clean
       - run: npm run release:zip
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: crescent-windows-x64
           path: |
