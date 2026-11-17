@@ -1,0 +1,58 @@
+import {_electron as electron} from 'playwright-core';
+import assert from 'node:assert/strict';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {openStore} from '../src/store.js';
+const root=path.resolve(import.meta.dirname,'..'),profile=path.join(root,'test-results',`order-${Date.now()}`);
+const music=path.join(profile,'Music');await fs.mkdir(music,{recursive:true});
+const store=await openStore(path.join(profile,'crescent.sqlite'));
+store.run("INSERT INTO playlists(id,name) VALUES ('p','自定义排序'),('r','同步歌单')");
+for(let i=0;i<36;i++){
+ const id=`t${String(i).padStart(2,'0')}`,file=path.join(music,`${id}.mp3`);
+ await fs.copyFile(path.join(root,'tests/fixtures/Moonrise.mp3'),file);
+ store.run('INSERT INTO tracks(id,path,title,artist,album,duration,format,added) VALUES (?,?,?,?,?,?,?,?)',[id,file,`Song ${i}`,'Artist','Album',180,'MP3',i]);
+ store.run('INSERT INTO playlist_tracks VALUES (?,?,?)',['p',id,i]);
+ if(i<3)store.run('INSERT INTO playlist_tracks VALUES (?,?,?)',['r',id,i]);
+}
+store.run("INSERT INTO playlist_origins VALUES ('r','n',4,4,0,1,NULL)");
+for(let i=0;i<4;i++)store.run('INSERT INTO remote_playlist_items(playlist,song_id,position,title,artist,album,duration,known,local_track,managed) VALUES (?,?,?,?,?,?,?,?,?,?)',['r',String(i),i,`Song ${i}`,'Artist','Album',180,1,i<3?`t0${i}`:null,1]);
+store.db.close();
+const options={cwd:root,args:[`--user-data-dir=${profile}`],timeout:45000};
+if(process.env.CRESCENT_EXE)options.executablePath=process.env.CRESCENT_EXE;else options.args.unshift(root);
+let app=await electron.launch(options);
+try{
+ let page=await app.firstWindow();const errors=[];page.on('pageerror',e=>errors.push(e.message));
+ await page.locator('[data-view="p"]').click();
+ const row=key=>page.locator(`[data-order-key="${key}"]`);
+ await row('track:t02').locator('.track-index').dragTo(row('track:t00'),{targetPosition:{x:10,y:5}});
+ await page.waitForFunction(async()=>JSON.stringify((await window.crescent.call('collections')).playlistOrders.p?.slice(0,3))===JSON.stringify(['track:t02','track:t00','track:t01']));
+ assert.equal(await page.locator('#sort').inputValue(),'source');
+ await row('track:t02').scrollIntoViewIfNeeded();
+ const handle=await row('track:t02').locator('.track-index').boundingBox();
+ const initialScroll=await page.evaluate(()=>window.scrollY);
+ await page.mouse.move(handle.x+8,handle.y+handle.height/2);await page.mouse.down();
+ await page.mouse.move(handle.x+8,handle.y+handle.height/2+15,{steps:3});
+ await page.mouse.move(handle.x+8,await page.evaluate(()=>innerHeight-125),{steps:12});
+ await page.waitForFunction(initial=>window.scrollY>initial+300,initialScroll,{timeout:5000});
+ assert.equal(await page.locator('.track-dragging').count(),1);
+ await page.mouse.up();
+ await page.waitForFunction(async()=>(await window.crescent.call('collections')).playlistOrders.p.indexOf('track:t02')>3);
+ const firstKey=await page.evaluate(async()=>(await window.crescent.call('collections')).playlistOrders.p[0]);
+ await page.locator('#search').fill('Song 1');
+ await row('track:t11').locator('.track-index').dragTo(row('track:t10'),{targetPosition:{x:10,y:5}});
+ await page.waitForFunction(async()=>{const p=(await window.crescent.call('collections')).playlistOrders.p;return p.indexOf('track:t11')<p.indexOf('track:t10');});
+ await page.locator('#search').fill('');
+ await page.locator('[data-view="r"]').click();await page.waitForSelector('.pending-track');
+ await row('remote:3').locator('.track-index').dragTo(row('remote:0'),{targetPosition:{x:10,y:5}});
+ await page.waitForFunction(async()=>(await window.crescent.call('collections')).playlistOrders.r?.[0]==='remote:3');
+ await row('remote:1').locator('.track-index').dragTo(page.locator('[data-view="p"]'));
+ await page.waitForFunction(()=>document.querySelector('#toast').textContent.includes('已加入'));
+ await page.screenshot({path:path.join(root,'test-results/playlist-order.png')});
+ assert.deepEqual(errors,[]);
+ await app.close();app=await electron.launch(options);page=await app.firstWindow();
+ await page.locator('[data-view="r"]').click();await page.waitForSelector('.pending-track');
+ assert.equal(await page.locator('#track-list .track-row').first().getAttribute('data-order-key'),'remote:3');
+ await page.locator('[data-view="p"]').click();
+ assert.equal(await page.locator('#track-list .track-row').first().getAttribute('data-order-key'),firstKey);
+ console.log('PASS: native drag reorder with edge scrolling across virtual rows, search subset reorder, pending song reorder, sidebar drag compatibility and persisted order after restart');
+}finally{await app.close();}

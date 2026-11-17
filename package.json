@@ -1,0 +1,32 @@
+{
+  "name": "crescentmusic",
+  "version": "1.9.0",
+  "description": "Crescent · 个人本地音乐播放器",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "node --test --test-isolation=none tests/*.test.js",
+    "dist": "node scripts/package.mjs",
+    "test:desktop": "node scripts/desktop-tests.mjs",
+    "dist:clean": "node scripts/package.mjs --clean",
+    "test:clean": "node scripts/clean-build-smoke.mjs",
+    "release:zip": "node scripts/archive-release.mjs",
+    "notices": "node scripts/third-party-notices.mjs",
+    "source:export": "node scripts/export-source.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "koffi": "^3.3.8",
+    "music-metadata": "^12.5.0"
+  },
+  "devDependencies": {
+    "electron": "^45.3.3",
+    "playwright-core": "^1.65.1"
+  },
+  "engines": {
+    "node": ">=24.0.0"
+  }
+}

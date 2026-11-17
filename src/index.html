@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: crescent:; media-src crescent:; style-src 'self'; script-src 'self'; connect-src 'none'"><title>Crescent Music</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="song-detail.css"></head>
+<body>
+<div class="titlebar"><div class="titlebar-label">CRESCENT MUSIC</div><div class="window-controls"><button id="window-minimize" aria-label="最小化" title="最小化"><svg viewBox="0 0 16 16"><path d="M3 8.5h10"/></svg></button><button id="window-maximize" aria-label="最大化" title="最大化"><svg viewBox="0 0 16 16"><rect x="3.5" y="3.5" width="9" height="9"/></svg></button><button id="window-close" aria-label="退出" title="退出"><svg viewBox="0 0 16 16"><path d="m4 4 8 8M12 4l-8 8"/></svg></button></div></div>
+<aside class="sidebar">
+  <div class="brand"><span class="moon">◔</span><span>Crescent</span></div>
+  <div class="nav-label">音乐空间</div>
+  <nav id="navigation">
+    <button data-view="library" class="active"><i>▦</i>我的音乐库 <span id="library-count"></span></button>
+    <button data-view="favorites"><i>♡</i>我喜欢的音乐</button>
+    <button data-view="recent"><i>◷</i>最近播放</button>
+    <button data-view="stats"><i>▥</i>听歌统计</button>
+  </nav>
+  <div class="nav-label">为你整理</div>
+  <nav><button data-view="week"><i>↗</i>本周常听</button><button data-view="unplayed"><i>✧</i>还没听过</button><button data-view="rediscover"><i>⟲</i>久违的旋律</button></nav>
+  <div class="nav-label playlist-label">我的歌单 <button id="new-playlist" title="创建歌单">＋</button></div>
+  <nav id="playlist-nav"></nav>
+  <div class="sidebar-bottom"><span class="local-dot"></span> 本地音乐 · 私人空间<button id="settings-open" title="设置">⚙</button></div>
+</aside>
+<main>
+  <header><div class="breadcrumb">我的空间 <span>/</span> <b id="breadcrumb">音乐库</b></div><div class="header-actions"><label class="search">⌕ <input id="search" placeholder="搜索歌曲、歌手、专辑"><kbd>Ctrl K</kbd></label><button id="import-files" data-import="files" class="primary small" title="选择一个或多个音频文件">＋ 导入音乐</button><button id="import-folder" data-import="folder" class="secondary small">导入文件夹</button></div></header>
+  <section class="hero"><div class="hero-copy"><h1 id="page-title">我的音乐库</h1><p id="page-description"></p><div class="hero-actions"><button id="play-all" class="primary">▶ 播放全部</button><button id="shuffle-all" class="secondary">⤨ 随机播放</button><button id="playlist-edit" class="secondary hidden">编辑歌单</button></div></div><div class="hero-art" id="hero-art"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="vinyl"><div class="vinyl-label">c<span>rescent</span></div></div><span class="art-star">✦</span></div></section>
+  <section id="overview" class="overview"></section>
+  <section id="stats-panel" class="hidden"></section>
+  <section class="library-panel"><div class="section-heading"><div><h2 id="list-title">全部歌曲</h2><span id="list-count">0 首音乐</span></div><div class="list-tools"><button id="rescan" title="重新扫描音乐文件夹">⟳</button><select id="sort"><option id="sort-source" value="source" hidden>歌单顺序</option><option value="added">最近添加</option><option value="title">歌曲名称</option><option value="plays">总播放次数</option><option value="weekPlays">近七天播放次数</option><option value="lastPlayed">最近播放</option></select></div></div>
+  <div class="table-head"><span>#</span><span>歌曲 / 歌手</span><span>专辑</span><span>播放次数</span><span>时长</span><span></span></div><div id="track-list"></div>
+  <div id="empty" class="empty"><div class="empty-icon">♫</div><h3>把你的音乐带进来</h3><p>选择本地音乐文件，开始收藏属于你的声音。<br>支持 MP3 · FLAC · WAV · M4A · OGG 等常见格式</p><div class="hero-actions"><button id="empty-import-files" data-import="files" class="primary">＋ 选择音乐文件</button><button id="empty-import" data-import="folder" class="secondary">选择音乐文件夹</button></div><small>导入时复制到专属音乐文件夹，随时安心播放</small></div>
+  </section>
+</main>
+<section class="player"><div class="now-playing"><div id="player-cover" class="cover player-cover">♫</div><div><strong id="player-title">准备好，听一首喜欢的歌</strong><small id="player-artist">你的私人音乐空间</small></div><button id="player-like" title="喜欢">♡</button></div><div class="player-center"><div class="transport"><button id="mode" title="列表循环">↻</button><button id="previous" title="上一首">⏮</button><button id="toggle" class="play-button" title="播放 / 暂停">▶</button><button id="next" title="下一首">⏭</button><button id="timer" title="定时停止">◷</button></div><div class="progress"><span id="elapsed">0:00</span><input id="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="播放进度"><span id="duration">0:00</span></div></div><div class="player-right"><button id="lyrics-open" title="桌面悬浮歌词" aria-pressed="false">词</button><button id="queue-open" title="播放队列">☷ <small id="queue-count">0</small></button><span>♪</span><input id="volume" type="range" min="0" max="1" step="0.01" value="0.7" aria-label="音量"></div></section>
+<section id="song-detail" class="song-detail hidden" aria-label="歌曲详情">
+  <header class="detail-header"><button id="detail-close" class="secondary" aria-label="返回歌曲列表" title="返回歌曲列表"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 9 7 7 7-7"/></svg></button><span id="detail-format"></span></header>
+  <div class="detail-layout">
+    <div class="detail-visual"><div class="detail-glow"><img class="detail-art-image" alt="" hidden></div><div class="detail-orbit orbit-a"></div><div class="detail-orbit orbit-b"></div><div class="detail-artwork"><span class="detail-placeholder">◔</span><img class="detail-art-image" alt="歌曲封面" hidden></div><div class="detail-reflection"><img class="detail-art-image" alt="" hidden></div><div class="detail-caption"><span class="detail-dot"></span><span id="detail-status">歌曲预览</span><span class="detail-caption-line"></span></div></div>
+    <div class="detail-copy"><div class="detail-heading"><h1 id="detail-title"></h1><p id="detail-artist"></p><p class="detail-album-label">专辑 <span id="detail-album"></span></p><div class="detail-actions"><button id="detail-play" class="primary">▶ 播放这首</button><button id="detail-favorite" class="secondary">♡ 喜欢</button></div></div>
+      <div class="detail-lyrics-heading"><strong>歌词</strong><div><button id="detail-import">导入 LRC</button><button id="detail-search">匹配歌词</button></div></div><div id="detail-lyrics" class="detail-lyrics" aria-label="歌词内容"></div>
+    </div>
+  </div>
+</section>
+<aside id="drawer" class="drawer hidden"><div class="drawer-heading"><h2 id="drawer-title"></h2><button id="drawer-close">×</button></div><div id="drawer-content"></div></aside>
+<dialog id="modal"><form id="modal-form"><div class="modal-top"><h2 id="modal-title"></h2><button type="button" id="modal-close">×</button></div><div id="modal-body"></div><div class="modal-actions"><button type="button" id="modal-cancel" class="secondary">取消</button><button id="modal-submit" class="primary" type="submit">保存</button></div></form></dialog>
+<div id="toast" role="status" class="hidden"></div><audio id="audio" preload="metadata"></audio><script type="module" src="renderer.js"></script>
+</body></html>

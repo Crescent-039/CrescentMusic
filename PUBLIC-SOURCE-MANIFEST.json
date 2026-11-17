@@ -1,0 +1,445 @@
+{
+  "version": "1.9.0",
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 233,
+      "sha256": "b2b6d22ab84a4d1e84d4132c78161fb30a7e38c33435ec81e1d7d5a561abcd1a"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "bytes": 195,
+      "sha256": "fdc0771752dccdbb38de18fbf7a8f91cd7a285f321b98a6d1329529a0d547ef1"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.md",
+      "bytes": 181,
+      "sha256": "6dbf723ffa039bb682a012a0de835d33d27bd707d53ee4a882edd273ddfdee3e"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "bytes": 89,
+      "sha256": "8a49845f9e1d5340d943e4d31602e2900dfda17aa9a6be23ed19eed38801d4ff"
+    },
+    {
+      "path": ".github/workflows/windows.yml",
+      "bytes": 745,
+      "sha256": "5c71ae7b9a6d9d25fa632eeb6f4109e7bf3c4a176bdaf78f975f6f02975c4bae"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 223,
+      "sha256": "480a11a972fcd942581be5bcc3fd26659d8d663d724d3ff2530fcdc01e56fe55"
+    },
+    {
+      "path": "启动播放器.cmd",
+      "bytes": 204,
+      "sha256": "e69a445c706432bf5370f560ae3e4dff38e5ea7e0deccc5522ae1f8cfda5c321"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1137,
+      "sha256": "43efffac81bc030e9547a360bf23ef7e4f083a36cf40011b65a432ef666513b2"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 728,
+      "sha256": "56bbd066a1aa012e8e0c839fadacc405a7c97a3343bed1504615329ae01705df"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "bytes": 718,
+      "sha256": "0e3054ea1a18d4771544e11a9c9a8f3c4decdded75e02dca9c058fa62d2747a3"
+    },
+    {
+      "path": "docs/count-import.md",
+      "bytes": 1009,
+      "sha256": "d33b9069833b6d8fcc11031e38994179794d16b3218cffab1bccfa949f5cc0a0"
+    },
+    {
+      "path": "docs/releasing.md",
+      "bytes": 1258,
+      "sha256": "b72601448662f4803cb1453c274b56f294121930ddda04c662c39012ab8a7a2e"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1084,
+      "sha256": "c4d2f25deb178757cc5349407b95a1653732df2696e10553ba6a1bed85ad745a"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 21520,
+      "sha256": "b4513093a78f1c71bce1976c4eda5f6f5e858b389961e7732751a0ccb5c6cbca"
+    },
+    {
+      "path": "package.json",
+      "bytes": 902,
+      "sha256": "845ebd7989a24c6d8664473aaa0d6d691ff84bf2f4097ec005dc3a281551dc9d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4274,
+      "sha256": "cf948a72b07498353d1807ade80c99bfc074bcf3c99c2ca26bb7381bc9045ec2"
+    },
+    {
+      "path": "scripts/archive-release.mjs",
+      "bytes": 1349,
+      "sha256": "86b41398c8f7bd5e4bbce2f373806ba0c29a259be25c31034e69d0c57a368ff7"
+    },
+    {
+      "path": "scripts/clean-build-smoke.mjs",
+      "bytes": 1540,
+      "sha256": "b7991e25e88b6e440b3300f98cf4687cb9833a3ca78ab1fc856a601d8201ea5b"
+    },
+    {
+      "path": "scripts/desktop-tests.mjs",
+      "bytes": 517,
+      "sha256": "25ec127f697614838de52902953361946b28d6abaffba771790bdaee919c1be7"
+    },
+    {
+      "path": "scripts/export-source.mjs",
+      "bytes": 3850,
+      "sha256": "056a75703f42d32f42e884f78fab53a5e783d2d664c1d4fff0a5ddb827e97be1"
+    },
+    {
+      "path": "scripts/generate-taskbar-icons.py",
+      "bytes": 1485,
+      "sha256": "1b6c1944c1b9e9320a18fde04b0c2c7539bbaf5d5af221249ec0aa95fd274bcd"
+    },
+    {
+      "path": "scripts/generate-test-fixtures.py",
+      "bytes": 1882,
+      "sha256": "9ef4c78ae337f9252c8210b702805e403e8d21fb51d9d2f54490cee8a98f5beb"
+    },
+    {
+      "path": "scripts/import-count-screenshots.mjs",
+      "bytes": 2462,
+      "sha256": "d9e5e7d5e066a6ad897c5b0ac93c6a6001226e4a67475fea2f16ae6c99b151c3"
+    },
+    {
+      "path": "scripts/import-files-smoke.mjs",
+      "bytes": 3190,
+      "sha256": "978de94445740ea4e545d22b25074400441f09d3ed76e13942c3ce8ab3109d31"
+    },
+    {
+      "path": "scripts/migration-smoke.mjs",
+      "bytes": 4315,
+      "sha256": "9c31fb9fcaffac1067516e7d74c481bb60cfa4403b3db2f97b67fbc5264aafaf"
+    },
+    {
+      "path": "scripts/package.mjs",
+      "bytes": 2864,
+      "sha256": "b5e03ce404df71f81b65cd53b35029745c95bbce463e4ab3f5255c440468f08b"
+    },
+    {
+      "path": "scripts/performance.mjs",
+      "bytes": 4805,
+      "sha256": "b8537a4317e1838544191bdf68808bc505b789821c3c0c71fc1a3b6f6edb2bcb"
+    },
+    {
+      "path": "scripts/playlist-order-smoke.mjs",
+      "bytes": 4649,
+      "sha256": "ba2adcf7d6b7b8c52fcd03e48e86bc8113868c8e85edc4b3f51900c33a2d343a"
+    },
+    {
+      "path": "scripts/public-docs.mjs",
+      "bytes": 671,
+      "sha256": "a5be7931c0d0c5b08c25a1a05751f457a66458342de92fce982530ea9c975340"
+    },
+    {
+      "path": "scripts/repair-untagged-title.mjs",
+      "bytes": 2260,
+      "sha256": "8c1ed37ba2a9af3ab43e8f0d1609d9a1b7e05268657840110551e9c352a071b7"
+    },
+    {
+      "path": "scripts/seek-smoke.mjs",
+      "bytes": 2191,
+      "sha256": "a469dc6e41ec409beb0d550ebe595c9b0ae893ba6172f1de655a158e6b6e50ef"
+    },
+    {
+      "path": "scripts/smoke.mjs",
+      "bytes": 10828,
+      "sha256": "daf24c40c97c2837d88830bdf51d818fe27310402daddfba320d4a6dd35c9c47"
+    },
+    {
+      "path": "scripts/song-detail-smoke.mjs",
+      "bytes": 7926,
+      "sha256": "16bbd62bbfd8cc8355344758107562af9eeba9e911cc92b51a3b3a3659e8479e"
+    },
+    {
+      "path": "scripts/sync-created-playlists.mjs",
+      "bytes": 1698,
+      "sha256": "9c3bb6e90abb2922244cb05963058ce26216c54e84797ea0321f30340e859cd1"
+    },
+    {
+      "path": "scripts/taskbar-artwork-smoke.mjs",
+      "bytes": 2627,
+      "sha256": "78202042fb587dd874f5591b4bffe74dd6b5e626a65d426b1c2c35993dca6ae6"
+    },
+    {
+      "path": "scripts/taskbar-smoke.mjs",
+      "bytes": 4877,
+      "sha256": "c4451a675cb037a521744fd833d3eb73a1cc550aa219adf0aa84cb6f7f986867"
+    },
+    {
+      "path": "scripts/third-party-notices.mjs",
+      "bytes": 2243,
+      "sha256": "172b63c9c953e952a03be5f0b296d52c59895be3506183a36e513916c281ea31"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 562,
+      "sha256": "f8234c9564be671727e22e0e7731294e2a97e1d5187a7bc19f8502a08c4f71ad"
+    },
+    {
+      "path": "src/assets/taskbar/app.png",
+      "bytes": 2009,
+      "sha256": "7878edfd3d806102b2dd809ebfc8be13ff8449f386ade4930f48ff36a22ea440"
+    },
+    {
+      "path": "src/assets/taskbar/favorite.png",
+      "bytes": 699,
+      "sha256": "31dd6a092441c102d5961eb98a9d9764dac6f5d8117dfe290dcc7434c9af6591"
+    },
+    {
+      "path": "src/assets/taskbar/favorited.png",
+      "bytes": 820,
+      "sha256": "e43d689191dd1e746024c64187a45ff2f8481668c5ad6046baade3feff2e2628"
+    },
+    {
+      "path": "src/assets/taskbar/next.png",
+      "bytes": 598,
+      "sha256": "2e3177f6cd4b411e907b9713b886e58853c0dc76eeb40118a7e3e609e2afe69d"
+    },
+    {
+      "path": "src/assets/taskbar/pause.png",
+      "bytes": 257,
+      "sha256": "e163b2ed5fd1d8c9f33709e6becb3c7c95e5bbbb0257829464ff5a4c0aa8ab45"
+    },
+    {
+      "path": "src/assets/taskbar/play.png",
+      "bytes": 408,
+      "sha256": "b9bd2488a8a278dcbe9776151832a24ce0a0051059114ee32a20dd0d77c610a4"
+    },
+    {
+      "path": "src/assets/taskbar/previous.png",
+      "bytes": 587,
+      "sha256": "bcf20bd48ee4ad7bc8b7b301ec4c9582170c10215fdfe31b9231d5aa13cd9bb4"
+    },
+    {
+      "path": "src/audio-response.js",
+      "bytes": 1462,
+      "sha256": "09faf8dffd50fbf3bbbe8fcb26590b5eb748197d7b5d75a655b388d6284aacdf"
+    },
+    {
+      "path": "src/count-snapshots.js",
+      "bytes": 4760,
+      "sha256": "fb851c06a54736559dc1e8110cc8086bdca2471c0a8a915712cc7185fec84919"
+    },
+    {
+      "path": "src/floating-lyrics-renderer.js",
+      "bytes": 484,
+      "sha256": "5c34e2236924ce177a280fe1641504f749950169ea0bc159b3fa036b7c8d7ede"
+    },
+    {
+      "path": "src/floating-lyrics.css",
+      "bytes": 1300,
+      "sha256": "a780750880dcb03d8056bfeac9eb0cb00798fe84c5f48aa5dc34c83943111658"
+    },
+    {
+      "path": "src/floating-lyrics.html",
+      "bytes": 804,
+      "sha256": "7787d8f6b7e2eb2326c7c80f5b2e6a5e1fac7896f1edfcdb0c68109ebfe44499"
+    },
+    {
+      "path": "src/floating-lyrics.js",
+      "bytes": 1914,
+      "sha256": "474d11b93cdbe1d99f2115601b4e0d986448bb9a18722bed9b0ca1d7d43441c4"
+    },
+    {
+      "path": "src/floating-preload.cjs",
+      "bytes": 327,
+      "sha256": "121b2603593e3905d0a978307b9c0787b3c7215aadd4eb6d14889eecf1446edd"
+    },
+    {
+      "path": "src/index.html",
+      "bytes": 7998,
+      "sha256": "3505fc8cdf42fc4383db2bc6a32e7efefba80bba4e0ddca9950e4145b1492558"
+    },
+    {
+      "path": "src/library.js",
+      "bytes": 1654,
+      "sha256": "82d10f9fd8d2400e79771ffd6677640628b4a4bac35ad17ee809f47c9d20614c"
+    },
+    {
+      "path": "src/listening.js",
+      "bytes": 1284,
+      "sha256": "9e806aec1a16c4e201c3fbdf45769f72d8fdd8a96f1ab9b9fc14b210c18af8ad"
+    },
+    {
+      "path": "src/main.js",
+      "bytes": 22624,
+      "sha256": "6be4f99f8c097bdc6bf7d791bec97c2f6131147564f9ff6c3ca0ac43e1dc796e"
+    },
+    {
+      "path": "src/netease-playlists.js",
+      "bytes": 7784,
+      "sha256": "4beb0409c246488202cca8b770096aff8ab07a06b170e46a77e91e2eab2a9624"
+    },
+    {
+      "path": "src/netease.js",
+      "bytes": 4014,
+      "sha256": "cc70a9bf3c5a463d584811e9d0cc260cf8eeccc7326d65925f3bb076da0251d9"
+    },
+    {
+      "path": "src/playlist-order.js",
+      "bytes": 1979,
+      "sha256": "ee55b4a4f58d56298582cab88d52c003e653ef119c745fb43e8934d6f90fb1f0"
+    },
+    {
+      "path": "src/preload.cjs",
+      "bytes": 1065,
+      "sha256": "c7b8e0ff7f3d5464181048ae12a694b8034ee0040ec67f623922fcb8df8c6714"
+    },
+    {
+      "path": "src/renderer.js",
+      "bytes": 40465,
+      "sha256": "4f0db3b12477d110ab2ee6bc4f07a1a76264a7b4cc971f5ef9237932d2bfa69f"
+    },
+    {
+      "path": "src/song-detail.css",
+      "bytes": 5534,
+      "sha256": "e95511dee481027548efbfa446a0c8f4523c5bedda8c8fc1da9313df52778d5a"
+    },
+    {
+      "path": "src/song-detail.js",
+      "bytes": 3582,
+      "sha256": "763d180a7df00a5f809bb596c6a2ba929bc8915530001432cf3b3711a78c8f5b"
+    },
+    {
+      "path": "src/store.js",
+      "bytes": 6966,
+      "sha256": "12a702734e3a70f36c81b654552a234faffa0302c5061f057968ee9ef9e092f7"
+    },
+    {
+      "path": "src/style.css",
+      "bytes": 15088,
+      "sha256": "878325b2cebb45978af54e8a90273434c920ac49453c77fff43384e6416fbcd2"
+    },
+    {
+      "path": "src/taskbar-artwork.js",
+      "bytes": 2267,
+      "sha256": "58da6277679bb3a5d5897dd5c889c84d18e0ada6389a1296031e717ce2c5aecb"
+    },
+    {
+      "path": "src/taskbar.js",
+      "bytes": 1978,
+      "sha256": "c780d6460a1c071950ac213cc6226033c6fb8a380de8cdc715473c82bbc115bb"
+    },
+    {
+      "path": "src/transitions.js",
+      "bytes": 1091,
+      "sha256": "e1f65bdd6fffe9d1ff8728cf94a6644366c508c87fe44af55728da9452967bae"
+    },
+    {
+      "path": "src/upgrade.js",
+      "bytes": 3731,
+      "sha256": "5155a673a2b23c0d213291659e76c0701cd4976862ce2ac2ff6034f4a8d9031a"
+    },
+    {
+      "path": "src/virtual-list.js",
+      "bytes": 2637,
+      "sha256": "f229a97df79bb687e811d02547441fcb0297b323aa2444623dbc4528ea35624c"
+    },
+    {
+      "path": "tests/audio-response.test.js",
+      "bytes": 1551,
+      "sha256": "1d4edd0fe144b67679d29c294300261edaf2568925fd521544e5bf08c0222c44"
+    },
+    {
+      "path": "tests/count-snapshots.test.js",
+      "bytes": 3480,
+      "sha256": "b81196e960439c28414e4f307927dd20b2c4fae2a66d213cd4315e842ef09722"
+    },
+    {
+      "path": "tests/fixtures/Afterglow.flac",
+      "bytes": 59194,
+      "sha256": "8be37b73e49b08e78db164048c61f10d117cb51ed51e53154ea887812b3f70e2"
+    },
+    {
+      "path": "tests/fixtures/cover.png",
+      "bytes": 4483,
+      "sha256": "504c44b7c052362866265438b2aa6d8001e02a2ff6ce250d3e8234bec48d26b1"
+    },
+    {
+      "path": "tests/fixtures/Moonrise.mp3",
+      "bytes": 29069,
+      "sha256": "ed2866565aa33df81b621181a36408b7a29675792024646ca5dc1b28f46097b3"
+    },
+    {
+      "path": "tests/fixtures/README.md",
+      "bytes": 758,
+      "sha256": "6b45f5c3ea62ad1857ee5960f26f82ba1abce6ca9258a0b7c4b5a6a13f2095b0"
+    },
+    {
+      "path": "tests/library.test.js",
+      "bytes": 2680,
+      "sha256": "cc957a079b6991f37c27dfd7808b800acbb62e5ea8babe9c7f46b892352d21ad"
+    },
+    {
+      "path": "tests/listening.test.js",
+      "bytes": 2014,
+      "sha256": "bf341dda989b002790cbc16ff195b00b7cd6e8f932508d6485bbaad75ca75f68"
+    },
+    {
+      "path": "tests/metadata.test.js",
+      "bytes": 757,
+      "sha256": "447604965c13f0950ea5da9db81e22fe781b519fa2a72c154071d9df1d3a1f70"
+    },
+    {
+      "path": "tests/netease-playlists.test.js",
+      "bytes": 3752,
+      "sha256": "babae9bb8c2743828db7e733089203f19df8cbdbaa69a7e98976045d0dd06b41"
+    },
+    {
+      "path": "tests/netease.test.js",
+      "bytes": 2633,
+      "sha256": "a6338b56b74df177559f15643b29bbb91700888294d16917905787d56894a7f7"
+    },
+    {
+      "path": "tests/playlist-order.test.js",
+      "bytes": 2485,
+      "sha256": "8c6d923eb1ac9bba556d1a3068b6ca14761a9fd50b9911121b86cba5edfbdc28"
+    },
+    {
+      "path": "tests/seek-fixtures/Seek.flac",
+      "bytes": 2876797,
+      "sha256": "7c64d90bf62b62accd1fc55a56246c1b4d4eeefceb5d3fb63cf22ea59a22e5d7"
+    },
+    {
+      "path": "tests/seek-fixtures/Seek.mp3",
+      "bytes": 1480737,
+      "sha256": "dbf5a9c4addd0832904a2d2654351e2e6cd4dd5a19624b683d5773c440e437b6"
+    },
+    {
+      "path": "tests/store.test.js",
+      "bytes": 2239,
+      "sha256": "7581a330d36fcbfe71d8603d5d8f12b7c9ef66ee908334ccb0e09c9d25382883"
+    },
+    {
+      "path": "tests/upgrade.test.js",
+      "bytes": 2474,
+      "sha256": "df7ee3ffddad789a5c17ad24a3aa27fe209628428da0ff96d86904e2933eb27a"
+    },
+    {
+      "path": "tests/virtual-list.test.js",
+      "bytes": 538,
+      "sha256": "e66d463287c856a5d6aecb84fa27ea928b841decf7cba883145539d3f792769f"
+    },
+    {
+      "path": "THIRD-PARTY-NOTICES.txt",
+      "bytes": 21575,
+      "sha256": "a47fd251ca0e3567f747fa00e740d3076b396d605ee4149d62571d5fd10294af"
+    }
+  ]
+}
